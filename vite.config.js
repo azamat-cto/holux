@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import Unfonts from 'unplugin-fonts/vite'
@@ -49,5 +50,13 @@ export default defineConfig({
         injectTo: 'head-prepend'
       }
     })
-  ]
+  ],
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: fileURLToPath(new URL('./src', import.meta.url))
+      }
+    ]
+  }
 })
