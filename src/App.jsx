@@ -3,6 +3,7 @@ import Home from '@/components/home'
 import Brands from '@/components/brands'
 import Popular from '@/components/popular'
 import Value from '@/components/value'
+import Contact from '@/components/contact'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Brands />
         <Popular />
         <Value />
+        <Contact />
       </main>
     </>
   )
