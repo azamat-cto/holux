@@ -1,7 +1,7 @@
 function Home() {
   return (
     <section
-      className="pt-[4.5rem] pb-24 bg-[linear-gradient(170deg,hsl(0,0%,22%)0%,hsl(0,0%,6%)30%)]"
+      className="pt-[4.5rem] bg-[linear-gradient(170deg,hsl(0,0%,22%)0%,hsl(0,0%,6%)30%)]"
       id="home"
     >
       <div className="pt-16">
