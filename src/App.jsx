@@ -1,5 +1,6 @@
 import Header from '@/components/header'
 import Home from '@/components/home'
+import Brands from '@/components/brands'
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Header />
       <main className="overflow-hidden">
         <Home />
+        <Brands />
       </main>
     </>
   )
