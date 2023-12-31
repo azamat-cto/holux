@@ -1,7 +1,12 @@
-function Logo() {
+import { cn } from '@/lib/utils'
+
+function Logo({ scrolled }) {
   return (
     <a
-      className="inline-flex items-center gap-x-1 text-white font-medium leading-[normal] hover:text-primary transition-colors"
+      className={cn(
+        'inline-flex items-center gap-x-1 text-white font-medium leading-[normal] hover:text-primary transition-colors',
+        scrolled ? 'text-foreground' : ''
+      )}
       href="#home"
     >
       <span>Holux</span>

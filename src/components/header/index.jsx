@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+import { cn } from '@/lib/utils'
 import Logo from './logo'
 
 const links = [
@@ -98,12 +100,48 @@ const links = [
 ]
 
 function Header() {
+  const containerElement = useRef(null)
+  const scrollListener = useRef()
+  const [scrolled, setScrolled] = useState(false)
+
+  const bindScrollListener = () => {
+    scrollListener.current = () => {
+      if (containerElement && containerElement.current) {
+        if (window.scrollY >= 50) setScrolled((prevState) => (prevState = true))
+        else setScrolled((prevState) => (prevState = false))
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener.current)
+  }
+
+  const unbindScrollListener = () => {
+    if (scrollListener.current) {
+      window.removeEventListener('scroll', scrollListener.current)
+      scrollListener.current = null
+    }
+  }
+
+  useEffect(() => {
+    bindScrollListener()
+
+    return function unbind() {
+      unbindScrollListener()
+    }
+  }, [])
+
   return (
-    <header className="sticky top-0 left-0 z-50 bg-transparent transition-colors">
+    <header
+      className={cn(
+        'fixed top-0 left-0 z-50 w-full bg-transparent transition-colors',
+        scrolled ? 'bg-background shadow-[0_1px_4px_hsla(228,4%,15%,0.1)]' : ''
+      )}
+      ref={containerElement}
+    >
       <div>
         <div className="container">
           <div className="flex items-center justify-between h-[3.5rem]">
-            <Logo />
+            <Logo scrolled={scrolled} />
 
             <div className="fixed right-4 bottom-8 left-4 py-5 px-12 rounded-[1.25rem] bg-card shadow-[0_8px_24px_hsla(228,66%,45%,0.15)] transition-colors md:hidden">
               <nav>
@@ -135,7 +173,9 @@ function Header() {
             </div>
 
             <div>
-              <a href="">Subscribe</a>
+              <a className="hidden md:inline" href="">
+                Subscribe
+              </a>
             </div>
           </div>
         </div>
