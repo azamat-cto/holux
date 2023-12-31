@@ -4,6 +4,7 @@ import Brands from '@/components/brands'
 import Popular from '@/components/popular'
 import Value from '@/components/value'
 import Contact from '@/components/contact'
+import Subscribe from '@/components/subscribe'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Popular />
         <Value />
         <Contact />
+        <Subscribe />
       </main>
     </>
   )
