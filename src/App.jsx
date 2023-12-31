@@ -9,6 +9,7 @@ function App() {
       <main className="overflow-hidden">
         <Home />
         <Brands />
+        <Popular />
       </main>
     </>
   )
