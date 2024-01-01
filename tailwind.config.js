@@ -72,6 +72,9 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))'
       },
+      backgroundImage: {
+        'home-pattern': 'linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%)'
+      },
       fontFamily: {
         sans: ['var(--ff-poppins)']
       },

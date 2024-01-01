@@ -2,10 +2,7 @@ import HomeImage from '@/assets/images/home.jpg'
 
 function Home() {
   return (
-    <section
-      className="pt-[4.5rem] bg-[linear-gradient(170deg,hsl(0,0%,22%)0%,hsl(0,0%,6%)30%)]"
-      id="home"
-    >
+    <section className="pt-[4.5rem] bg-home-pattern" id="home">
       <div className="pt-16">
         <div className="container">
           <div className="grid gap-y-14">
@@ -15,8 +12,8 @@ function Home() {
                   Discover Most Suitable Property
                 </h1>
                 <p className="text-foreground-light">
-                  Find a variety of properties that suit you very easily,
-                  forget all difficulties in finding a residence for you
+                  Find a variety of properties that suit you very easily, forget
+                  all difficulties in finding a residence for you
                 </p>
               </div>
 
@@ -35,8 +32,7 @@ function Home() {
                         fill="currentColor"
                         className="text-2xl text-primary"
                       >
-                        <path
-                          d="M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path>
+                        <path d="M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path>
                       </svg>
                       <input
                         className="w-full bg-background focus-visible:outline-0"
@@ -89,10 +85,8 @@ function Home() {
             </div>
 
             <div className="relative flex justify-center">
-              <div
-                className="w-[265px] h-[284px] bg-[linear-gradient(180deg,hsl(0,0%,16%)93%,hsl(0,0%,67%)100%)] rounded-[135px_135px_0_0]"></div>
-              <div
-                className="absolute -bottom-6 inline-flex items-end w-[250px] h-[300px] overflow-hidden rounded-[125px_125px_12px_12px] shadow-[0_16px_32px_hsl(228,66%,25%,0.25)]">
+              <div className="w-[265px] h-[284px] bg-[linear-gradient(180deg,hsl(0,0%,16%)93%,hsl(0,0%,67%)100%)] rounded-[135px_135px_0_0]"></div>
+              <div className="absolute -bottom-6 inline-flex items-end w-[250px] h-[300px] overflow-hidden rounded-[125px_125px_12px_12px] shadow-[0_16px_32px_hsl(228,66%,25%,0.25)]">
                 <img src={HomeImage} alt="" />
               </div>
             </div>
