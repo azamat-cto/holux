@@ -1,9 +1,15 @@
+import PopularImage1 from '@/assets/images/popular1.jpg'
+import PopularImage2 from '@/assets/images/popular2.jpg'
+import PopularImage3 from '@/assets/images/popular3.jpg'
+import PopularImage4 from '@/assets/images/popular4.jpg'
+import PopularImage5 from '@/assets/images/popular5.jpg'
+
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 
 const populars = [
   {
     id: 'popular-1',
-    img: '/src/assets/images/popular1.jpg',
+    img: PopularImage1,
     price: '66,356',
     title: 'Garden City Assat',
     description:
@@ -11,7 +17,7 @@ const populars = [
   },
   {
     id: 'popular-2',
-    img: '/src/assets/images/popular2.jpg',
+    img: PopularImage2,
     price: '35,159',
     title: 'Gables Luxurious House',
     description:
@@ -19,7 +25,7 @@ const populars = [
   },
   {
     id: 'popular-3',
-    img: '/src/assets/images/popular3.jpg',
+    img: PopularImage3,
     price: '75,043',
     title: 'Garden Orchard City',
     description:
@@ -27,7 +33,7 @@ const populars = [
   },
   {
     id: 'popular-4',
-    img: '/src/assets/images/popular4.jpg',
+    img: PopularImage4,
     price: '62,024',
     title: 'Luxurious City Garden',
     description:
@@ -35,7 +41,7 @@ const populars = [
   },
   {
     id: 'popular-5',
-    img: '/src/assets/images/popular5.jpg',
+    img: PopularImage5,
     price: '47,043',
     title: 'Aliva Private Garden',
     description:
