@@ -1,3 +1,4 @@
+import ValueImage from '@/assets/images/value.jpg'
 import {
   Accordion,
   AccordionContent,
@@ -13,7 +14,7 @@ function Value() {
           <div className="relative flex justify-center">
             <div className="w-[266px] h-[316px] bg-[hsl(228,24%,97%)] rounded-[135px_135px_16px_16px]"></div>
             <div className="absolute w-[250px] h-[300px] overflow-hidden rounded-[125px_125px_12px_12px] inset-0 m-auto shadow-[0_16px_32px_hsla(228,66%,25%,0.25)]">
-              <img src="/src/assets/images/value.jpg" alt="" />
+              <img src={ValueImage} alt="" />
             </div>
           </div>
 
