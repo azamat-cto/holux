@@ -1,3 +1,5 @@
+import ContactImage from '@/assets/images/contact.png'
+
 const cards = [
   {
     id: 'phone',
@@ -78,7 +80,7 @@ function Contact() {
           <div className="relative flex justify-center">
             <div className="w-[266px] h-[316px] bg-[hsl(228,24%,97%)] rounded-[135px_135px_16px_16px]"></div>
             <div className="absolute inset-0 w-[250px] h-[300px] overflow-hidden rounded-[125px_125px_12px_12px] m-auto shadow-[0_16px_32px_hsla(228,66%,25%,0.25)]">
-              <img src="/src/assets/images/contact.png" alt="" />
+              <img src={ContactImage} alt="" />
             </div>
           </div>
 
