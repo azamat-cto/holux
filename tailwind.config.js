@@ -73,7 +73,8 @@ export default {
         ring: 'hsl(var(--ring))'
       },
       backgroundImage: {
-        'home-pattern': 'linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%)'
+        'home-pattern': 'linear-gradient(170deg, hsl(0, 0%, 22%) 0%, hsl(0, 0%, 6%) 30%)',
+        'link-pattern': 'linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%))'
       },
       fontFamily: {
         sans: ['var(--ff-poppins)']
