@@ -5,6 +5,7 @@ import Popular from '@/components/popular'
 import Value from '@/components/value'
 import Contact from '@/components/contact'
 import Subscribe from '@/components/subscribe'
+import Footer from '@/components/footer'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Contact />
         <Subscribe />
       </main>
+      <Footer />
     </>
   )
 }
