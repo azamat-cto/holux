@@ -1,10 +1,12 @@
+import { useSectionInView } from '@/hooks'
+import { motion } from 'framer-motion'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+
 import PopularImage1 from '@/assets/images/popular1.jpg'
 import PopularImage2 from '@/assets/images/popular2.jpg'
 import PopularImage3 from '@/assets/images/popular3.jpg'
 import PopularImage4 from '@/assets/images/popular4.jpg'
 import PopularImage5 from '@/assets/images/popular5.jpg'
-
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 
 const populars = [
   {
@@ -50,8 +52,17 @@ const populars = [
 ]
 
 function Popular() {
+  const { ref } = useSectionInView('residences', 0.5)
+
   return (
-    <section className="pt-[4.5rem] pb-8" id="popular">
+    <motion.section
+      className="pt-[4.5rem] pb-8"
+      id="popular"
+      ref={ref}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+    >
       <div className="container">
         <div>
           <div className="mb-4">
@@ -67,9 +78,7 @@ function Popular() {
                 <SplideTrack>
                   {populars.map((popular) => (
                     <SplideSlide key={popular.id}>
-                      <article
-                        className="w-[300px] mx-auto bg-card pt-2 pb-6 px-2 rounded-2xl hover:shadow-[0_12px_16px_hsla(228,66%,45%,0.1)] transition"
-                      >
+                      <article className="w-[300px] mx-auto bg-card pt-2 pb-6 px-2 rounded-2xl hover:shadow-[0_12px_16px_hsla(228,66%,45%,0.1)] transition">
                         <div className="mb-4 rounded-2xl overflow-hidden">
                           <img src={popular.img} alt={popular.title} />
                         </div>
@@ -123,7 +132,7 @@ function Popular() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

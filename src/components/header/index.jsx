@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
+import { motion } from 'framer-motion'
 import Logo from './logo'
+import { useActiveSection } from '@/contexts/ActiveSectionContext'
 
 const links = [
   {
@@ -104,6 +106,8 @@ function Header() {
   const scrollListener = useRef()
   const [scrolled, setScrolled] = useState(false)
 
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSection()
+
   const bindScrollListener = () => {
     scrollListener.current = () => {
       if (containerElement && containerElement.current) {
@@ -147,14 +151,36 @@ function Header() {
               <nav>
                 <ul className="flex items-center justify-between">
                   {links.map((link) => (
-                    <li key={link.id}>
+                    <motion.li
+                      className="relative"
+                      key={link.id}
+                      initial={{ y: -100, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                    >
                       <a
-                        className="inline-flex p-2 rounded-full"
+                        className={cn('inline-flex p-2 rounded-full', {
+                          'text-white': activeSection === link.id
+                        })}
                         href={`${link.to}`}
+                        onClick={() => {
+                          setActiveSection(link.id)
+                          setTimeOfLastClick(Date.now())
+                        }}
                       >
                         {link.icon}
+                        {activeSection === link.id && (
+                          <motion.span
+                            className="absolute inset-0 -z-10 rounded-full bg-link-pattern shadow-[0_4px_8px_hsla(228,66%,45%,0.25)]"
+                            layoutId="activeSection"
+                            transition={{
+                              type: 'spring',
+                              stiffness: 380,
+                              damping: 30
+                            }}
+                          ></motion.span>
+                        )}
                       </a>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </nav>

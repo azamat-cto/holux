@@ -1,9 +1,21 @@
+import { useSectionInView } from '@/hooks'
+import { motion } from 'framer-motion'
+
 import HomeImage from '@/assets/images/home.jpg'
 
 function Home() {
+  const { ref } = useSectionInView('home', 0.5)
+
   return (
-    <section className="pt-[4.5rem] bg-home-pattern" id="home">
-      <div className="pt-16">
+    <motion.section
+      className="bg-home-pattern"
+      id="home"
+      ref={ref}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+    >
+      <div className="pt-32">
         <div className="container">
           <div className="grid gap-y-14">
             <div>
@@ -93,7 +105,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

@@ -6,10 +6,11 @@ import Value from '@/components/value'
 import Contact from '@/components/contact'
 import Subscribe from '@/components/subscribe'
 import Footer from '@/components/footer'
+import ActiveSectionContextProvider from '@/contexts/ActiveSectionContext'
 
 function App() {
   return (
-    <>
+    <ActiveSectionContextProvider>
       <Header />
       <main className="overflow-hidden">
         <Home />
@@ -20,7 +21,7 @@ function App() {
         <Subscribe />
       </main>
       <Footer />
-    </>
+    </ActiveSectionContextProvider>
   )
 }
 

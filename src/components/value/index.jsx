@@ -1,4 +1,5 @@
-import ValueImage from '@/assets/images/value.jpg'
+import { useSectionInView } from '@/hooks'
+import { motion } from 'framer-motion'
 import {
   Accordion,
   AccordionContent,
@@ -6,9 +7,20 @@ import {
   AccordionTrigger
 } from '@/components/ui/accordion'
 
+import ValueImage from '@/assets/images/value.jpg'
+
 function Value() {
+  const { ref } = useSectionInView('value', 0.70)
+
   return (
-    <section className="pt-[4.5rem] pb-8" id="value">
+    <motion.section
+      className="pt-[4.5rem] pb-8"
+      id="value"
+      ref={ref}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+    >
       <div className="container">
         <div className="grid gap-y-12">
           <div className="relative flex justify-center">
@@ -69,7 +81,7 @@ function Value() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

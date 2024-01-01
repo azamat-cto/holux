@@ -1,3 +1,6 @@
+import { useSectionInView } from '@/hooks'
+import { motion } from 'framer-motion'
+
 import ContactImage from '@/assets/images/contact.png'
 
 const cards = [
@@ -73,8 +76,17 @@ const cards = [
 ]
 
 function Contact() {
+  const { ref } = useSectionInView('contact', 0.45)
+
   return (
-    <section className="pt-[4.5rem] pb-8" id="contact">
+    <motion.section
+      className="pt-[4.5rem] pb-8"
+      id="contact"
+      ref={ref}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+    >
       <div className="container">
         <div className="grid gap-y-8">
           <div className="relative flex justify-center">
@@ -124,7 +136,7 @@ function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
