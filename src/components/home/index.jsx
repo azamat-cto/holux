@@ -1,3 +1,5 @@
+import HomeImage from '@/assets/images/home.jpg'
+
 function Home() {
   return (
     <section
@@ -91,7 +93,7 @@ function Home() {
                 className="w-[265px] h-[284px] bg-[linear-gradient(180deg,hsl(0,0%,16%)93%,hsl(0,0%,67%)100%)] rounded-[135px_135px_0_0]"></div>
               <div
                 className="absolute -bottom-6 inline-flex items-end w-[250px] h-[300px] overflow-hidden rounded-[125px_125px_12px_12px] shadow-[0_16px_32px_hsl(228,66%,25%,0.25)]">
-                <img src="/src/assets/images/home.jpg" alt="" />
+                <img src={HomeImage} alt="" />
               </div>
             </div>
           </div>
