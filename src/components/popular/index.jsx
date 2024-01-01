@@ -60,10 +60,9 @@ function Popular() {
               <div className="pt-4 pb-20">
                 <SplideTrack>
                   {populars.map((popular) => (
-                    <SplideSlide>
+                    <SplideSlide key={popular.id}>
                       <article
                         className="w-[300px] mx-auto bg-card pt-2 pb-6 px-2 rounded-2xl hover:shadow-[0_12px_16px_hsla(228,66%,45%,0.1)] transition"
-                        key={popular.id}
                       >
                         <div className="mb-4 rounded-2xl overflow-hidden">
                           <img src={popular.img} alt={popular.title} />
