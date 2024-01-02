@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
+import { useActiveSectionContext } from '@/contexts/ActiveSectionContext'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
+
 import Logo from './logo'
-import { useActiveSection } from '@/contexts/ActiveSectionContext'
 
 const links = [
   {
@@ -106,7 +107,7 @@ function Header() {
   const scrollListener = useRef()
   const [scrolled, setScrolled] = useState(false)
 
-  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSection()
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext()
 
   const bindScrollListener = () => {
     scrollListener.current = () => {
