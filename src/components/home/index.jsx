@@ -1,4 +1,4 @@
-import { useSectionInView } from '@/hooks'
+import { useSectionInView } from '@/hooks/useSectionInView'
 import { motion } from 'framer-motion'
 
 import HomeImage from '@/assets/images/home.jpg'
