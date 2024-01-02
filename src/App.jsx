@@ -6,6 +6,7 @@ import Value from '@/components/value'
 import Contact from '@/components/contact'
 import Subscribe from '@/components/subscribe'
 import Footer from '@/components/footer'
+import ScrollToTop from '@/components/ScrollToTop'
 import ActiveSectionContextProvider from '@/contexts/ActiveSectionContext'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Subscribe />
       </main>
       <Footer />
+      <ScrollToTop />
     </ActiveSectionContextProvider>
   )
 }
